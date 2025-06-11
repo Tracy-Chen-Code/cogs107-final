@@ -251,7 +251,7 @@ def apply_hierarchical_sdt_model(data, draws=2000, tune=1000, target_accept=0.9,
                       round_to=3)
     return model, trace, summ
 
-def draw_delta_plots(data, pnum):
+def draw_delta_plots(data, pnum, out_dir=OUT_DIR):
     """Draw delta plots comparing RT distributions between condition pairs.
     
     Creates a matrix of delta plots where:
@@ -274,8 +274,8 @@ def draw_delta_plots(data, pnum):
                             figsize=(4*n_conditions, 4*n_conditions))
     
     # Create output directory
-    OUTPUT_DIR = Path(__file__).parent.parent.parent / 'output'
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    #OUTPUT_DIR = Path(__file__).parent.parent.parent / 'output'
+    out_dir.mkdir(parents=True, exist_ok=True)
     
     # Define marker style for plots
     marker_style = {
@@ -350,7 +350,7 @@ def draw_delta_plots(data, pnum):
             plt.tight_layout()
             
     # Save the figure
-    plt.savefig(OUTPUT_DIR / f'delta_plots_{pnum}.png')
+    plt.savefig(out_dir / f'delta_plots_p{pnum}.png')
 
 # Main execution
 if __name__ == "__main__":
@@ -391,7 +391,7 @@ if __name__ == "__main__":
     # ---------- Step 3: delta-plot for first participant ----------
     dp_df = read_data(DATA_PATH, prepare_for="delta plots")
     first_p = int(dp_df["pnum"].min())
-    draw_delta_plots(dp_df, first_p)
+    draw_delta_plots(dp_df, first_p, out_dir=OUT_DIR)
 
     print(f"\nPipeline finished — all outputs saved in: {OUT_DIR}")
     # ---------- Append figure links to README ----------

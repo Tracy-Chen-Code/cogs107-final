@@ -12,17 +12,9 @@ During test time, you will be asked to interpret these results, including descri
 
 Be prepared to re-run your code while you are answering questions.## Results (auto-generated)
 
+Results 
 ![Forest plot](output/forest.png)
 ![Pair plot – d′](output/pairplot_dprime.png)
 ![Trace plot](output/traceplot.png)
 ![Delta plot – participant 1](output/delta_plots_p1.png)
-<<<<<<< HEAD
-=======
->>>>>>> f00260e (Initial commit: SDT+delta pipeline and results)
-## Results (auto-generated)
 
-![Forest plot](output/forest.png)
-![Pair plot – d′](output/pairplot_dprime.png)
-![Trace plot](output/traceplot.png)
-![Delta plot – participant 1](output/delta_plots_p1.png)
->>>>>>> 1afce4e (Fix path + add delta plot)

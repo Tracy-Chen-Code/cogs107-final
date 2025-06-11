@@ -18,3 +18,25 @@ Results
 ![Trace plot](output/traceplot.png)
 ![Delta plot – participant 1](output/delta_plots_p1.png)
 
+<<<<<<< HEAD
+=======
+![Forest plot](output/forest.png)
+![Pair plot – d′](output/pairplot_dprime.png)
+![Trace plot](output/traceplot.png)
+![Delta plot – participant 1](output/delta_plots_p1.png)
+>>>>>>> 1afce4e (Fix path + add delta plot)
+## Results (auto-generated)
+
+![Forest plot](output/forest.png)
+![Pair plot – d′](output/pairplot_dprime.png)
+![Trace plot](output/traceplot.png)
+![Posterior](output/posterior_betas_gammas.png)
+![Delta plot – participant 1](output/delta_plots_p1.png)
+## Results (auto-generated)
+
+![Forest plot](output/forest.png)
+![Pair plot – d′](output/pairplot_dprime.png)
+![Trace plot](output/traceplot.png)
+![Posterior](output/posterior_betas_gammas.png)
+![Delta plot – participant 1](output/delta_plots_p1.png)
+>>>>>>> a6127f0 (local changes before rebase)

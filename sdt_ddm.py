@@ -388,6 +388,29 @@ if __name__ == "__main__":
     plt.savefig(OUT_DIR/"traceplot.png", dpi=300)
     plt.close()
 
+    #vars_to_plot = ["beta_s", "beta_d", "beta_int"]   # e.g. sensitivity effects
+    # vars_to_plot = ["gamma_s"]                      # just one parameter
+    #vars_to_plot = trace.posterior.data_vars        # all parameters
+    posterior_vars = [
+        "alpha_d", "beta_s", "beta_d", "beta_int",
+        "alpha_c", "gamma_s", "gamma_d", "gamma_int",
+    ]
+
+    az.plot_posterior(
+        trace,
+        var_names=posterior_vars,
+        hdi_prob=0.94,          # 94% HDI
+        figsize=(12, 6),        
+        kind="kde",             # KDE 
+        textsize=12,
+        round_to=2,
+        point_estimate="mean",  
+    )
+
+    plt.tight_layout()
+    plt.savefig(OUT_DIR / "posterior_betas_gammas.png", dpi=300)
+    plt.close()
+
     # ---------- Step 3: delta-plot for first participant ----------
     dp_df = read_data(DATA_PATH, prepare_for="delta plots")
     first_p = int(dp_df["pnum"].min())
@@ -400,6 +423,7 @@ if __name__ == "__main__":
         f"![Forest plot]({OUT_DIR.name}/forest.png)",
         f"![Pair plot – d′]({OUT_DIR.name}/pairplot_dprime.png)",
         f"![Trace plot]({OUT_DIR.name}/traceplot.png)",
+        f"![Posterior]({OUT_DIR.name}/posterior_betas_gammas.png)",
         f"![Delta plot – participant {first_p}]"
         f"({OUT_DIR.name}/delta_plots_p{first_p}.png)",
         ""  # end with a blank line
